@@ -10,22 +10,9 @@ import ReactDOM from 'react-dom';
 //import './styles/styles.scss';
 //import 'react-dates/lib/css/_datepicker.css';
 
-class Indecision extends React.Component {
-    constructor(props) {
-        super(props);
+import IndecisionApp from './components/IndecisionApp';
 
-        this.state = {
-            options: ['One','Two','three','Four']
-        }
-    }
-    render() {
-        return (
-            <div>
-                Indecision
-            </div>
-        )
-    }
-}
+
 /*
 const jsx = (
     <div>
@@ -33,5 +20,5 @@ const jsx = (
     </div>
 );*/
 
-ReactDOM.render(<Indecision />, document.getElementById('app'));
+ReactDOM.render(<IndecisionApp />, document.getElementById('app'));
 //ReactDOM.render(jsx, document.getElementById('app'));
