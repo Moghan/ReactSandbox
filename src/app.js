@@ -13,6 +13,7 @@ import ReactDOM from 'react-dom';
 import IndecisionApp from './components/IndecisionApp';
 
 // testing GIT first 
+// testing Git second
 
 /*
 const jsx = (
