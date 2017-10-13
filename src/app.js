@@ -14,6 +14,8 @@ import IndecisionApp from './components/IndecisionApp';
 
 // testing GIT first 
 
+//test after reset to FIRST test commit 
+
 /*
 const jsx = (
     <div>
