@@ -13,6 +13,8 @@ import ReactDOM from 'react-dom';
 import IndecisionApp from './components/IndecisionApp';
 
 // testing GIT first 
+// testing Git second
+// teseting Git third
 
 //test after reset to FIRST test commit 
 
