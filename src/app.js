@@ -11,7 +11,8 @@ import ReactDOM from 'react-dom';
 
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 
-//import './styles/styles.scss'; TODO ---------------------
+import 'normalize.css/normalize.css';
+import './styles/styles.scss';
 
 import IndecisionApp from './components/IndecisionApp';
 
@@ -22,33 +23,36 @@ import IndecisionApp from './components/IndecisionApp';
 //test after reset to FIRST test commit 
 
 const Homepage = () => (
-    <div>This is the homepage!</div>
+    <div className="container">This is the homepage!</div>
 );
 
 
 const Create = () => (
-    <div>page to create something</div>
+    <div className="container">page to create something</div>
 );
 
 const Edit = () => (
-    <div>edit mode</div>
+    <div className="container">edit mode</div>
 );
 
 const Help = () => (
-    <div>Help page.</div>
+    <div className="container">Help page.</div>
 );
 
 const NotFoundPage = () => (
-    <div>page 404 !</div>
+    <div className="container">page 404 !</div>
 );
 
 const Header = () => (
-    <header>
-        <h1>Expansify</h1>
-        <NavLink to="/" activeClassName="is-active">Homepage</NavLink>
-        <NavLink to="/create" activeClassName="is-active">Create</NavLink>
-        <NavLink to="/edit" activeClassName="is-active">Edit</NavLink>
-        <NavLink to="/help" activeClassName="is-active">Help</NavLink>
+    <header className="header">
+        <div className="container">
+            <h1 className="header__title">Expansify</h1>
+            <h2 className="header__subtitle">this is subtitle space</h2>
+            <NavLink to="/" activeClassName="is-active">Homepage</NavLink>
+            <NavLink to="/create" activeClassName="is-active">Create</NavLink>
+            <NavLink to="/edit" activeClassName="is-active">Edit</NavLink>
+            <NavLink to="/help" activeClassName="is-active">Help</NavLink>
+        </div>
     </header>
 );
 
