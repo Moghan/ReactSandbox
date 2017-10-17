@@ -9,12 +9,23 @@ import ReactDOM from 'react-dom';
 //import 'normalize.css/normalize.css';
 //import 'react-dates/lib/css/_datepicker.css';
 
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+//import Drawer from 'material-ui/Drawer';
+//import AppBar from 'material-ui/AppBar';
+//import RaisedButton from 'material-ui/RaisedButton';
+//import ChipInput from 'material-ui-chip-input';
+
 import {BrowserRouter, Route, Switch, Link, NavLink} from 'react-router-dom';
 
-import 'normalize.css/normalize.css';
+//import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 
 import IndecisionApp from './components/IndecisionApp';
+import DrawerRight from './components/DrawerRight';
+import IconButton from 'material-ui/IconButton';
+import AppBar from 'material-ui/AppBar';
+import NavigationClose from 'material-ui/svg-icons/navigation/close';
+import FlatButton from 'material-ui/FlatButton';
 
 // testing GIT first 
 // testing Git second
@@ -22,13 +33,43 @@ import IndecisionApp from './components/IndecisionApp';
 
 //test after reset to FIRST test commit 
 
+const handleTouchTap = () => (
+    System.log("handleTouchTap")
+);
+
+const styles = {
+    title: {
+      cursor: 'pointer',
+    },
+  };
+
+  const AppBarExampleIconButton = () => (
+    <AppBar
+      title={<span style={styles.title}>Title</span>}
+      onTitleTouchTap={handleTouchTap}
+      iconElementLeft={<IconButton><NavigationClose /></IconButton>}
+      iconElementRight={<FlatButton label="Save" />}
+    />
+  );
+  
 const Homepage = () => (
-    <div className="container">This is the homepage!</div>
+    <MuiThemeProvider>
+        <div className="container">
+            This is the homepage!
+            <DrawerRight open={true} />
+        </div>
+    </MuiThemeProvider>
 );
 
 
 const Create = () => (
-    <div className="container">page to create something</div>
+    <div className="container">
+        <MuiThemeProvider>
+            <AppBarExampleIconButton />
+            page to create something
+        </MuiThemeProvider>
+
+    </div>
 );
 
 const Edit = () => (
@@ -45,14 +86,19 @@ const NotFoundPage = () => (
 
 const Header = () => (
     <header className="header">
-        <div className="container">
-            <h1 className="header__title">Expansify</h1>
-            <h2 className="header__subtitle">this is subtitle space</h2>
-            <NavLink to="/" activeClassName="is-active">Homepage</NavLink>
-            <NavLink to="/create" activeClassName="is-active">Create</NavLink>
-            <NavLink to="/edit" activeClassName="is-active">Edit</NavLink>
-            <NavLink to="/help" activeClassName="is-active">Help</NavLink>
-        </div>
+        <MuiThemeProvider>
+            <div className="container">       
+                <h1 className="header__title" >Expansify</h1>
+                <h2 className="header__subtitle">this is subtitle space</h2>
+                <NavLink to="/" activeClassName="is-active">Homepage</NavLink>
+                <NavLink to="/create" activeClassName="is-active">Create</NavLink>
+                <NavLink to="/edit" activeClassName="is-active">Edit</NavLink>
+                <NavLink to="/help" activeClassName="is-active"  style={{cursor:'pointer'}}>Help</NavLink>
+                <IconButton color="white"
+                    iconClassName="muidocs-icon-custom-github"
+                />
+            </div>
+        </MuiThemeProvider>
     </header>
 );
 
